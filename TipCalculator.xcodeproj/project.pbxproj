@@ -12,6 +12,7 @@
 		65737CB21DF91DA600D2AC0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65737CB01DF91DA600D2AC0C /* Main.storyboard */; };
 		65737CB41DF91DA600D2AC0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65737CB31DF91DA600D2AC0C /* Assets.xcassets */; };
 		65737CB71DF91DA600D2AC0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65737CB51DF91DA600D2AC0C /* LaunchScreen.storyboard */; };
+		65737CC81DF9258500D2AC0C /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737CC71DF9258500D2AC0C /* SettingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		65737CB31DF91DA600D2AC0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65737CB61DF91DA600D2AC0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65737CB81DF91DA600D2AC0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65737CC71DF9258500D2AC0C /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				65737CAE1DF91DA600D2AC0C /* TipCalculatorVC.swift */,
+				65737CC71DF9258500D2AC0C /* SettingVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -163,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Thomas Zhu";
 				TargetAttributes = {
 					65737CA81DF91DA600D2AC0C = {
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65737CAF1DF91DA600D2AC0C /* TipCalculatorVC.swift in Sources */,
+				65737CC81DF9258500D2AC0C /* SettingVC.swift in Sources */,
 				65737CAD1DF91DA600D2AC0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -303,6 +308,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -371,6 +377,7 @@
 				65737CBD1DF91DA600D2AC0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

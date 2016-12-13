@@ -8,18 +8,23 @@
 
 import UIKit
 
-class TipCalculatorVC: UIViewController {
-
+class TipCalculatorVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var billAmount: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        billAmount.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        billAmount.resignFirstResponder()
+        return true
     }
 
+    @IBAction func backgroundTapped(_ sender: Any) {
+        view.endEditing(true)
+    }
 
 }
 
