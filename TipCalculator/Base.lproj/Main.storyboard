@@ -88,43 +88,32 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-a0-z71" userLabel="Quality Selector">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="3qj-YA-8cS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b6-qa-WzV" userLabel="Great Service">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="3qj-YA-8cS" secondAttribute="height" multiplier="1:1" id="jSh-sq-jj7"/>
+                                                    <constraint firstAttribute="width" secondItem="2b6-qa-WzV" secondAttribute="height" multiplier="1:1" id="Qcd-Of-ErF"/>
                                                 </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="8QO-4J-lGg">
+                                                <connections>
+                                                    <action selector="poorServicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jfm-hg-zuG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kD-Zq-bgu" userLabel="Fine Service">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="8QO-4J-lGg" secondAttribute="height" multiplier="1:1" id="NKI-rg-IfC"/>
+                                                    <constraint firstAttribute="width" secondItem="5kD-Zq-bgu" secondAttribute="height" multiplier="1:1" id="S7I-HW-1OV"/>
                                                 </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="l0j-Me-ecL">
+                                                <connections>
+                                                    <action selector="fineServicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ven-66-6Eh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnS-ra-qZD" userLabel="Poor Service">
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="l0j-Me-ecL" secondAttribute="height" multiplier="1:1" id="tB7-4x-ntg"/>
+                                                    <constraint firstAttribute="width" secondItem="BnS-ra-qZD" secondAttribute="height" multiplier="1:1" id="E5F-gM-arC"/>
                                                 </constraints>
-                                            </imageView>
+                                                <connections>
+                                                    <action selector="greatServicePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8n-qh-Ark"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pdF-MX-9lt" userLabel="Quality Slider">
-                                        <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LvY-re-yA1">
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="__%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-7Z-hoY">
-                                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="__COMMENT__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBQ-VC-45c">
-                                        <frame key="frameInset" minX="187" minY="318" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4cF-Ud-92Z" userLabel="Separator">
                                         <subviews>
                                             <view alpha="0.34999999403953552" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CkC-1n-OKB" userLabel="Separator - Left">
@@ -149,7 +138,7 @@
                                             <constraint firstItem="pHY-BN-TVl" firstAttribute="width" secondItem="CkC-1n-OKB" secondAttribute="width" id="seD-hs-Tka"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gJA-QF-rRf" userLabel="Calculation">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gJA-QF-rRf" userLabel="Calculation">
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-Uf-O5G" userLabel="Tip">
                                                 <subviews>
@@ -197,6 +186,12 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.17999999999999999" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="Mss-1m-QYg"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="__COMMENT__" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBQ-VC-45c">
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QTQ-Z2-dwL" userLabel="Split">
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="38E-XE-6xW" userLabel="Number of People">
@@ -273,10 +268,8 @@
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="R84-p4-g1j" firstAttribute="height" secondItem="qMZ-Bx-Vog" secondAttribute="height" multiplier="15%" id="00P-Ba-qWU"/>
-                                    <constraint firstItem="gJA-QF-rRf" firstAttribute="centerX" secondItem="pdF-MX-9lt" secondAttribute="centerX" id="0Sa-y8-KBh"/>
                                     <constraint firstItem="4cF-Ud-92Z" firstAttribute="leading" secondItem="qMZ-Bx-Vog" secondAttribute="leading" constant="20" id="0vV-FP-p6O"/>
                                     <constraint firstAttribute="trailing" secondItem="slk-Si-sbe" secondAttribute="trailing" constant="20" id="1zk-XP-86C"/>
-                                    <constraint firstItem="pdF-MX-9lt" firstAttribute="width" secondItem="cO6-a0-z71" secondAttribute="width" id="31n-Xf-JR7"/>
                                     <constraint firstAttribute="trailing" secondItem="R84-p4-g1j" secondAttribute="trailing" id="5cW-X8-m1g"/>
                                     <constraint firstAttribute="bottom" secondItem="R84-p4-g1j" secondAttribute="bottom" constant="20" id="8Yx-YM-r6N"/>
                                     <constraint firstItem="T10-FZ-WzC" firstAttribute="height" secondItem="qMZ-Bx-Vog" secondAttribute="height" multiplier="15%" id="AOf-ch-ahY"/>
@@ -290,14 +283,12 @@
                                     <constraint firstItem="cko-Va-e2D" firstAttribute="centerX" secondItem="qR5-kq-YSq" secondAttribute="centerX" id="UcA-4n-zQJ"/>
                                     <constraint firstItem="T10-FZ-WzC" firstAttribute="leading" secondItem="qMZ-Bx-Vog" secondAttribute="leading" id="Vuz-79-3oz"/>
                                     <constraint firstItem="R84-p4-g1j" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gJA-QF-rRf" secondAttribute="bottom" constant="20" id="Wdg-g7-gfJ"/>
-                                    <constraint firstItem="cO6-a0-z71" firstAttribute="top" secondItem="slk-Si-sbe" secondAttribute="bottom" constant="7.5" id="avP-yu-dip"/>
-                                    <constraint firstItem="pdF-MX-9lt" firstAttribute="top" secondItem="cO6-a0-z71" secondAttribute="bottom" constant="7.5" id="iWn-CH-3PY"/>
-                                    <constraint firstItem="pdF-MX-9lt" firstAttribute="centerX" secondItem="cO6-a0-z71" secondAttribute="centerX" id="k6A-3f-6ho"/>
+                                    <constraint firstItem="cO6-a0-z71" firstAttribute="top" secondItem="slk-Si-sbe" secondAttribute="bottom" constant="8" id="avP-yu-dip"/>
+                                    <constraint firstItem="4cF-Ud-92Z" firstAttribute="top" secondItem="cO6-a0-z71" secondAttribute="bottom" constant="20" id="dlP-kY-SdK"/>
                                     <constraint firstItem="cO6-a0-z71" firstAttribute="centerX" secondItem="qMZ-Bx-Vog" secondAttribute="centerX" id="mkd-6N-PY5"/>
                                     <constraint firstItem="T10-FZ-WzC" firstAttribute="top" secondItem="qMZ-Bx-Vog" secondAttribute="top" constant="20" id="ob5-BN-d7v"/>
+                                    <constraint firstItem="gJA-QF-rRf" firstAttribute="width" secondItem="4cF-Ud-92Z" secondAttribute="width" id="rCI-P8-WD7"/>
                                     <constraint firstItem="R84-p4-g1j" firstAttribute="leading" secondItem="qMZ-Bx-Vog" secondAttribute="leading" id="rhN-hs-Hsj"/>
-                                    <constraint firstItem="4cF-Ud-92Z" firstAttribute="top" secondItem="pdF-MX-9lt" secondAttribute="bottom" constant="20" id="vW3-2C-Ft1"/>
-                                    <constraint firstItem="gJA-QF-rRf" firstAttribute="width" secondItem="pdF-MX-9lt" secondAttribute="width" id="wR9-jt-2xU"/>
                                     <constraint firstAttribute="trailing" secondItem="4cF-Ud-92Z" secondAttribute="trailing" constant="20" id="xBb-Au-SyS"/>
                                     <constraint firstItem="slk-Si-sbe" firstAttribute="top" secondItem="T10-FZ-WzC" secondAttribute="bottom" constant="20" id="yB2-8T-3PS"/>
                                 </constraints>
@@ -308,6 +299,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gJA-QF-rRf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LUb-fQ-z5R"/>
                             <constraint firstItem="qMZ-Bx-Vog" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LXy-Om-qEy"/>
                             <constraint firstAttribute="trailing" secondItem="qMZ-Bx-Vog" secondAttribute="trailing" id="pCm-fA-5qi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qMZ-Bx-Vog" secondAttribute="bottom" id="rhy-hZ-g0Y"/>
@@ -315,7 +307,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="billAmount" destination="qR5-kq-YSq" id="hVO-sF-Y7h"/>
+                        <outlet property="billAmount" destination="qR5-kq-YSq" id="ptn-7g-q7g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
