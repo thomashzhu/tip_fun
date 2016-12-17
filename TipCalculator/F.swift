@@ -26,6 +26,12 @@ struct F {
             return formatter
         }()
         
+        static let percentile: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.maximumFractionDigits = 1
+            return formatter
+        }()
+        
         static let integer: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.maximumFractionDigits = 0

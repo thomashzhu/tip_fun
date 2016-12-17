@@ -30,25 +30,20 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    enum TipsIncludedPhase: String {
-        case Included = "[X] tips included"
-        case NotIncluded = "[ ] tips included"
-    }
-    
     private var autoRecalculate = false
     
     private(set) var previousSavedTipPercentage: Double = 0
     private(set) var tipsIncluded: Bool {
         get {
-            return (tipsIncludedButton.title(for: .normal) == TipsIncludedPhase.Included.rawValue)
+            return (tipsIncludedButton.title(for: .normal) == C.TipsIncludedPhase.Included.rawValue)
         }
         set {
             if newValue {
-                tipsIncludedButton.setTitle(TipsIncludedPhase.Included.rawValue, for: .normal)
+                tipsIncludedButton.setTitle(C.TipsIncludedPhase.Included.rawValue, for: .normal)
                 previousSavedTipPercentage = tipPercentage
                 tipPercentage = 0
             } else {
-                tipsIncludedButton.setTitle(TipsIncludedPhase.NotIncluded.rawValue, for: .normal)
+                tipsIncludedButton.setTitle(C.TipsIncludedPhase.NotIncluded.rawValue, for: .normal)
                 tipPercentage = previousSavedTipPercentage
             }
             
@@ -67,6 +62,8 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private(set) var greatServicePct = 0.0, fineServicePct = 0.0, poorServicePct = 0.0
+    
     private(set) var tipPercentage: Double {
         get {
             return F.NumberFormat.percentage.number(from: tipPercentageLabel.text!)! as Double
@@ -80,7 +77,6 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     
     private(set) var tipAmount: Double {
         get {
-            print(F.NumberFormat.currency.number(from: tipAmountLabel.text!)! as Double)
             return F.NumberFormat.currency.number(from: tipAmountLabel.text!)! as Double
         }
         set {
@@ -99,7 +95,7 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK: - Lifecycle Methods
+    // MARK: - Lifecycle Callbacks
     
     override func viewDidLoad() {
         
@@ -107,11 +103,22 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         billAmountTextField.delegate = self
         
         setDefaultValues()
+        
+        let defaults = UserDefaults.standard
+        tipPercentage = defaults.double(forKey: C.SettingKeys.DefaultTipPercentage.rawValue)
+        
         recalculate()
         
         billAmountTextField.becomeFirstResponder()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        greatServicePct = defaults.double(forKey: C.SettingKeys.GreatServicePercentage.rawValue)
+        fineServicePct = defaults.double(forKey: C.SettingKeys.FineServicePercentage.rawValue)
+        poorServicePct = defaults.double(forKey: C.SettingKeys.PoorServicePercentage.rawValue)
+    }
+    
     // MARK: - Delegate Methods
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -150,16 +157,16 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         tipsIncluded = !tipsIncluded
     }
     
-    @IBAction func poorServicePressed(_ sender: AnyObject) {
-        
+    @IBAction func greatServicePressed(_ sender: AnyObject) {
+        tipPercentage = greatServicePct
     }
     
     @IBAction func fineServicePressed(_ sender: AnyObject) {
-        
+        tipPercentage = fineServicePct
     }
     
-    @IBAction func greatServicePressed(_ sender: AnyObject) {
-        
+    @IBAction func poorServicePressed(_ sender: AnyObject) {
+        tipPercentage = poorServicePct
     }
     
     @IBAction func lowerTipPercentagePressed(_ sender: AnyObject) {
