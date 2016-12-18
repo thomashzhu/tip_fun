@@ -24,4 +24,11 @@ class C {
         case GreatServicePercentage = "great_pct"
         case DefaultTipPercentage = "default_tip_pct"
     }
+    
+    static let dataExpirationTime: Double = 10 * 60; // in seconds
+    
+    enum PersistenceKeys: String {
+        case ResultTime = "current_time"
+        case BillAmount = "bill_amount"
+    }
 }

@@ -58,6 +58,12 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         }
         set {
             billAmountTextField.text = F.NumberFormat.currency.string(from: NSNumber(value: newValue))
+            
+            let defaults = UserDefaults.standard
+            defaults.set(Date().timeIntervalSince1970, forKey: C.PersistenceKeys.ResultTime.rawValue)
+            defaults.set(newValue, forKey: C.PersistenceKeys.BillAmount.rawValue)
+            defaults.synchronize()
+            
             recalculate()
         }
     }
@@ -114,6 +120,12 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
+        
+        if Date().timeIntervalSince1970 - defaults.double(forKey: C.PersistenceKeys.ResultTime.rawValue) <
+            C.dataExpirationTime {
+            billAmount = defaults.double(forKey: C.PersistenceKeys.BillAmount.rawValue)
+        }
+        
         greatServicePct = defaults.double(forKey: C.SettingKeys.GreatServicePercentage.rawValue)
         fineServicePct = defaults.double(forKey: C.SettingKeys.FineServicePercentage.rawValue)
         poorServicePct = defaults.double(forKey: C.SettingKeys.PoorServicePercentage.rawValue)
@@ -212,7 +224,9 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     private func setDefaultValues() {
         tipIncluded = false
         
-        billAmount = 0
+        billAmountTextField.text = F.NumberFormat.currency.string(from: 0)
+            // to not trigger billAmount's record time stamp (C.PersistenceKeys.ResultTime)
+        
         tipPercentage = 0
         numberOfPeople = 1
         
