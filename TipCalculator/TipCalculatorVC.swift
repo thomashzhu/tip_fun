@@ -8,8 +8,9 @@
 
 import UIKit
 import Foundation
+import pop
 
-class TipCalculatorVC: UIViewController, UITextFieldDelegate {
+class TipCalculatorVC: UIViewController, UITextFieldDelegate, UIViewControllerTransitioningDelegate {
     
     // MARK: - IBOutlets
     
@@ -244,5 +245,22 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
             let averageCost = totalCost / Double(numberOfPeople)
             perPersonCostLabel.text = F.NumberFormat.currency.string(from: NSNumber(value: averageCost))
         }
+    }
+    
+    // MARK: - Facebook Pop
+    
+    @IBAction func showSettingsPressed(_ sender: AnyObject) {
+        let settingVC = storyboard!.instantiateViewController(withIdentifier: "SettingVC")
+        settingVC.transitioningDelegate = self
+        settingVC.modalPresentationStyle = .custom
+        present(settingVC, animated: true, completion: nil)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentingAnimationController()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissingAnimationController()
     }
 }

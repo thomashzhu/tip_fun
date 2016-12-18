@@ -11,6 +11,8 @@
 		6503725B1E011ABC001671A9 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503725A1E011ABC001671A9 /* C.swift */; };
 		6536D7C41E069541007461A6 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; };
 		6536D7C51E069541007461A6 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6536D7CD1E070E36007461A6 /* PresentingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D7CC1E070E36007461A6 /* PresentingAnimationController.swift */; };
+		6536D7CF1E071326007461A6 /* DismissingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D7CE1E071326007461A6 /* DismissingAnimationController.swift */; };
 		656974BF1E04FAE1004087C1 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974BE1E04FAE1004087C1 /* DoubleExtension.swift */; };
 		656974C11E050033004087C1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974C01E050033004087C1 /* Operators.swift */; };
 		65737CAD1DF91DA600D2AC0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737CAC1DF91DA600D2AC0C /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 		6503725A1E011ABC001671A9 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
 		6536D7C31E069541007461A6 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6536D7C71E069609007461A6 /* TipCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
+		6536D7CC1E070E36007461A6 /* PresentingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingAnimationController.swift; sourceTree = "<group>"; };
+		6536D7CE1E071326007461A6 /* DismissingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissingAnimationController.swift; sourceTree = "<group>"; };
 		656974BE1E04FAE1004087C1 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		656974C01E050033004087C1 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		65737CA91DF91DA600D2AC0C /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +79,15 @@
 				9A6BBF4B8EDC61BA95CF75B1 /* Pods_TipCalculator.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6536D7CA1E070DF3007461A6 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				6536D7CC1E070E36007461A6 /* PresentingAnimationController.swift */,
+				6536D7CE1E071326007461A6 /* DismissingAnimationController.swift */,
+			);
+			name = Animators;
 			sourceTree = "<group>";
 		};
 		656974BB1E043878004087C1 /* Delegates */ = {
@@ -148,6 +161,7 @@
 		65737CC11DF91DC000D2AC0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6536D7CA1E070DF3007461A6 /* Animators */,
 				65737CC61DF91E0400D2AC0C /* Storyboard */,
 			);
 			name = Views;
@@ -331,9 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				656974BF1E04FAE1004087C1 /* DoubleExtension.swift in Sources */,
+				6536D7CD1E070E36007461A6 /* PresentingAnimationController.swift in Sources */,
 				650372591E010F28001671A9 /* F.swift in Sources */,
 				656974C11E050033004087C1 /* Operators.swift in Sources */,
 				65737CAF1DF91DA600D2AC0C /* TipCalculatorVC.swift in Sources */,
+				6536D7CF1E071326007461A6 /* DismissingAnimationController.swift in Sources */,
 				65737CC81DF9258500D2AC0C /* SettingVC.swift in Sources */,
 				6503725B1E011ABC001671A9 /* C.swift in Sources */,
 				65737CAD1DF91DA600D2AC0C /* AppDelegate.swift in Sources */,

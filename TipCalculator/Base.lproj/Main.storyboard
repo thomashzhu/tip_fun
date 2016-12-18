@@ -50,7 +50,7 @@
                                                 </constraints>
                                                 <state key="normal" image="setting_gear"/>
                                                 <connections>
-                                                    <segue destination="vZV-14-fkg" kind="show" identifier="SettingVC" id="UTs-FT-wDc"/>
+                                                    <action selector="showSettingsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRP-MJ-G2C"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="tap to enter amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qR5-kq-YSq">
@@ -364,7 +364,7 @@
         <!--SettingVC-->
         <scene sceneID="U2F-uO-s9f">
             <objects>
-                <viewController id="vZV-14-fkg" customClass="SettingVC" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingVC" id="vZV-14-fkg" customClass="SettingVC" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Wt-mD-PPD"/>
                         <viewControllerLayoutGuide type="bottom" id="qaV-lv-rXA"/>
@@ -605,7 +605,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1590" y="793"/>
+            <point key="canvasLocation" x="1666" y="793"/>
         </scene>
     </scenes>
     <resources>
