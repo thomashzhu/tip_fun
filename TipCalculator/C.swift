@@ -31,4 +31,6 @@ class C {
         case ResultTime = "current_time"
         case BillAmount = "bill_amount"
     }
+    
+    static let viewAppeared = "view_appeared"
 }

@@ -32,7 +32,9 @@ class SettingVC: UIViewController {
     // MARK: - IBActions
     
     @IBAction func closePressed(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: C.viewAppeared)))
+        }
     }
     
     @IBAction func backgroundTapped(_ sender: AnyObject) {
@@ -67,7 +69,9 @@ class SettingVC: UIViewController {
         }
         
         defaults.synchronize()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) { 
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: C.viewAppeared)))
+        }
     }
     
     // Helper Methods

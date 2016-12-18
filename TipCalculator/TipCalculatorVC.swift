@@ -232,6 +232,8 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
         numberOfPeople = 1
         
         autoRecalculate = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(TipCalculatorVC.viewWillAppear(_:)), name: Notification.Name(C.viewAppeared), object: nil)
     }
     
     private func recalculate() {

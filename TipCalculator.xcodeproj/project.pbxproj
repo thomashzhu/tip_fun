@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		650372591E010F28001671A9 /* F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650372581E010F28001671A9 /* F.swift */; };
 		6503725B1E011ABC001671A9 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503725A1E011ABC001671A9 /* C.swift */; };
-		6536D7C41E069541007461A6 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; };
 		6536D7C51E069541007461A6 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6536D7CD1E070E36007461A6 /* PresentingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D7CC1E070E36007461A6 /* PresentingAnimationController.swift */; };
 		6536D7CF1E071326007461A6 /* DismissingAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536D7CE1E071326007461A6 /* DismissingAnimationController.swift */; };
+		6536D7D01E0723EB007461A6 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; };
 		656974BF1E04FAE1004087C1 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974BE1E04FAE1004087C1 /* DoubleExtension.swift */; };
 		656974C11E050033004087C1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974C01E050033004087C1 /* Operators.swift */; };
 		65737CAD1DF91DA600D2AC0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737CAC1DF91DA600D2AC0C /* AppDelegate.swift */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		650372581E010F28001671A9 /* F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F.swift; sourceTree = "<group>"; };
 		6503725A1E011ABC001671A9 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
-		6536D7C31E069541007461A6 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6536D7C31E069541007461A6 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = pop.framework; path = pop/pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6536D7C71E069609007461A6 /* TipCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
 		6536D7CC1E070E36007461A6 /* PresentingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingAnimationController.swift; sourceTree = "<group>"; };
 		6536D7CE1E071326007461A6 /* DismissingAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissingAnimationController.swift; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6536D7C41E069541007461A6 /* pop.framework in Frameworks */,
 				CC002D79761E6CF842055070 /* Pods_TipCalculator.framework in Frameworks */,
+				6536D7D01E0723EB007461A6 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +481,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +499,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
