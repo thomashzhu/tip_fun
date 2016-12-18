@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		650372591E010F28001671A9 /* F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650372581E010F28001671A9 /* F.swift */; };
 		6503725B1E011ABC001671A9 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503725A1E011ABC001671A9 /* C.swift */; };
+		6536D7C41E069541007461A6 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; };
+		6536D7C51E069541007461A6 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D7C31E069541007461A6 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		656974BF1E04FAE1004087C1 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974BE1E04FAE1004087C1 /* DoubleExtension.swift */; };
 		656974C11E050033004087C1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656974C01E050033004087C1 /* Operators.swift */; };
 		65737CAD1DF91DA600D2AC0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65737CAC1DF91DA600D2AC0C /* AppDelegate.swift */; };
@@ -20,9 +22,25 @@
 		CC002D79761E6CF842055070 /* Pods_TipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6BBF4B8EDC61BA95CF75B1 /* Pods_TipCalculator.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6536D7C61E069542007461A6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6536D7C51E069541007461A6 /* pop.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		650372581E010F28001671A9 /* F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = F.swift; sourceTree = "<group>"; };
 		6503725A1E011ABC001671A9 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
+		6536D7C31E069541007461A6 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6536D7C71E069609007461A6 /* TipCalculator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TipCalculator-Bridging-Header.h"; sourceTree = "<group>"; };
 		656974BE1E04FAE1004087C1 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		656974C01E050033004087C1 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		65737CA91DF91DA600D2AC0C /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6536D7C41E069541007461A6 /* pop.framework in Frameworks */,
 				CC002D79761E6CF842055070 /* Pods_TipCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +113,7 @@
 				65737CBE1DF91DAA00D2AC0C /* Values */,
 				65737CAC1DF91DA600D2AC0C /* AppDelegate.swift */,
 				65737CB81DF91DA600D2AC0C /* Info.plist */,
+				6536D7C71E069609007461A6 /* TipCalculator-Bridging-Header.h */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -152,6 +172,7 @@
 		65737CC41DF91DDE00D2AC0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6536D7C31E069541007461A6 /* pop.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -196,6 +217,7 @@
 				65737CA71DF91DA600D2AC0C /* Resources */,
 				A87D213F1DB6B8158492AB87 /* [CP] Embed Pods Frameworks */,
 				8F0551EF6C4D8619D013B19E /* [CP] Copy Pods Resources */,
+				6536D7C61E069542007461A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +240,8 @@
 				TargetAttributes = {
 					65737CA81DF91DA600D2AC0C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = L398DL783R;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -438,10 +462,14 @@
 			baseConfigurationReference = EB71BC1BD45A66FA54E2CBAF /* Pods-TipCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipCalculator/TipCalculator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -451,10 +479,13 @@
 			baseConfigurationReference = 7403F068AF7F4A0C457067BD /* Pods-TipCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = L398DL783R;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomaszhu.TipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TipCalculator/TipCalculator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
