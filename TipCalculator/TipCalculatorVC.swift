@@ -13,7 +13,7 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var tipsIncludedButton: UIButton!
+    @IBOutlet weak var tipIncludedButton: UIButton!
     @IBOutlet weak var billAmountTextField: UITextField!
     
     @IBOutlet weak var tipPercentageLabel: UILabel!
@@ -33,17 +33,17 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     private var autoRecalculate = false
     
     private(set) var previousSavedTipPercentage: Double = 0
-    private(set) var tipsIncluded: Bool {
+    private(set) var tipIncluded: Bool {
         get {
-            return (tipsIncludedButton.title(for: .normal) == C.TipsIncludedPhase.Included.rawValue)
+            return (tipIncludedButton.title(for: .normal) == C.TipIncludedPhase.Included.rawValue)
         }
         set {
             if newValue {
-                tipsIncludedButton.setTitle(C.TipsIncludedPhase.Included.rawValue, for: .normal)
+                tipIncludedButton.setTitle(C.TipIncludedPhase.Included.rawValue, for: .normal)
                 previousSavedTipPercentage = tipPercentage
                 tipPercentage = 0
             } else {
-                tipsIncludedButton.setTitle(C.TipsIncludedPhase.NotIncluded.rawValue, for: .normal)
+                tipIncludedButton.setTitle(C.TipIncludedPhase.NotIncluded.rawValue, for: .normal)
                 tipPercentage = previousSavedTipPercentage
             }
             
@@ -153,24 +153,30 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    @IBAction func tipsIncludedTapped(_ sender: AnyObject) {
-        tipsIncluded = !tipsIncluded
+    @IBAction func tipIncludedTapped(_ sender: AnyObject) {
+        tipIncluded = !tipIncluded
     }
     
     @IBAction func greatServicePressed(_ sender: AnyObject) {
-        tipPercentage = greatServicePct
+        if !tipIncluded {
+            tipPercentage = greatServicePct
+        }
     }
     
     @IBAction func fineServicePressed(_ sender: AnyObject) {
-        tipPercentage = fineServicePct
+        if !tipIncluded {
+            tipPercentage = fineServicePct
+        }
     }
     
     @IBAction func poorServicePressed(_ sender: AnyObject) {
-        tipPercentage = poorServicePct
+        if !tipIncluded {
+            tipPercentage = poorServicePct
+        }
     }
     
     @IBAction func lowerTipPercentagePressed(_ sender: AnyObject) {
-        if !tipsIncluded {
+        if !tipIncluded {
             if tipPercentage.roundedTo(toNearest: C.tipPercentageIncrement) ~= tipPercentage {
                 tipPercentage = max(0, tipPercentage - C.tipPercentageIncrement)
             } else {
@@ -180,7 +186,7 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func higherTipPercentagePressed(_ sender: AnyObject) {
-        if !tipsIncluded {
+        if !tipIncluded {
             if tipPercentage.roundedTo(toNearest: C.tipPercentageIncrement) ~= tipPercentage {
                 tipPercentage = min(tipPercentage + C.tipPercentageIncrement, 1)
             } else {
@@ -204,7 +210,7 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate {
     // MARK: - Helper Methods
     
     private func setDefaultValues() {
-        tipsIncluded = false
+        tipIncluded = false
         
         billAmount = 0
         tipPercentage = 0

@@ -32,16 +32,16 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-EU-dIS">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-EU-dIS" userLabel="Tip Included Button">
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="0bl-c2-wUC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="[ ] tips included">
+                                                <state key="normal" title="[ ] tip included">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tipsIncludedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DRi-po-Ty0"/>
+                                                    <action selector="tipIncludedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJo-8B-7ak"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX7-f9-Dwm" userLabel="Setting Button">
@@ -346,9 +346,9 @@
                         <outlet property="numberOfPeopleLabel" destination="BQH-bM-Aad" id="OOA-Fo-PAB"/>
                         <outlet property="perPersonCostLabel" destination="wdN-4n-rGv" id="72j-tK-YuC"/>
                         <outlet property="tipAmountLabel" destination="Q0L-SD-Rl9" id="w9q-fc-SbN"/>
+                        <outlet property="tipIncludedButton" destination="sdw-EU-dIS" id="NDr-gc-p68"/>
                         <outlet property="tipPercentageLabel" destination="hYl-xL-aJM" id="b2H-VW-KVZ"/>
                         <outlet property="tipPercentageSlider" destination="Mss-1m-QYg" id="2g3-ZU-HhY"/>
-                        <outlet property="tipsIncludedButton" destination="sdw-EU-dIS" id="xUy-2o-4Qc"/>
                         <outlet property="totalAmountLabel" destination="cko-Va-e2D" id="46e-K0-ewf"/>
                     </connections>
                 </viewController>
@@ -381,7 +381,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="backPressed:" destination="vZV-14-fkg" eventType="touchUpInside" id="8bK-pa-nHh"/>
+                                            <action selector="closePressed:" destination="vZV-14-fkg" eventType="touchUpInside" id="EIC-IQ-U67"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zOW-7U-eZC" userLabel="Separator">
@@ -427,7 +427,7 @@
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91G-kh-nQu" userLabel="Great Service %">
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3c-8i-MnY" userLabel="% Label">
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -455,7 +455,7 @@
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-aQ-cbo" userLabel="Fine Service %">
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5e7-ne-aQ7" userLabel="% Label">
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -483,7 +483,7 @@
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ida-jK-45N" userLabel="Poor Service %">
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-0A-lrI" userLabel="% Label">
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -530,7 +530,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="745" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FC1-gN-qkW">
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cua-VN-m5v">
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -555,6 +555,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.35099098090000003" green="0.79035156969999998" blue="0.70508819820000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Vjo-wt-XBK" firstAttribute="leading" secondItem="8xl-Wu-1yU" secondAttribute="leading" constant="8" id="01m-iz-yIe"/>
                                     <constraint firstAttribute="trailing" secondItem="QaY-L4-9uo" secondAttribute="trailing" id="0KA-DY-Du1"/>
@@ -577,6 +578,9 @@
                                     <constraint firstAttribute="trailing" secondItem="AML-0b-e70" secondAttribute="trailing" constant="20" id="xEe-4G-Rhq"/>
                                     <constraint firstItem="GXd-tV-4CA" firstAttribute="centerX" secondItem="8xl-Wu-1yU" secondAttribute="centerX" id="zwQ-XP-QyO"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MTR-1r-dvx" appends="YES" id="G6U-A6-NI5"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -595,8 +599,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYU-2D-dBW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MTR-1r-dvx">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="vZV-14-fkg" id="VZx-o0-cS0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1704.8" y="792.95352323838085"/>
+            <point key="canvasLocation" x="1590" y="793"/>
         </scene>
     </scenes>
     <resources>

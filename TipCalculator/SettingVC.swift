@@ -44,8 +44,12 @@ class SettingVC: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction func backPressed(_ sender: AnyObject) {
+    @IBAction func closePressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backgroundTapped(_ sender: AnyObject) {
+        view.endEditing(true)
     }
     
     @IBAction func savePressed(_ sender: AnyObject) {

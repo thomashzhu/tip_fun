@@ -10,9 +10,9 @@ import Foundation
 
 class C {
     
-    enum TipsIncludedPhase: String {
-        case Included = "[X] tips included"
-        case NotIncluded = "[ ] tips included"
+    enum TipIncludedPhase: String {
+        case Included = "[X] tip included"
+        case NotIncluded = "[ ] tip included"
     }
     
     static let maxDisplayDigits = 20
