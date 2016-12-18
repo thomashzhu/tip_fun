@@ -118,7 +118,7 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
         
         billAmountTextField.becomeFirstResponder()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         
@@ -249,11 +249,11 @@ class TipCalculatorVC: UIViewController, UITextFieldDelegate, UIViewControllerTr
     
     // MARK: - Facebook Pop
     
-    @IBAction func showSettingsPressed(_ sender: AnyObject) {
-        let settingVC = storyboard!.instantiateViewController(withIdentifier: "SettingVC")
-        settingVC.transitioningDelegate = self
-        settingVC.modalPresentationStyle = .custom
-        present(settingVC, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let settingVC = segue.destination as? SettingVC {
+            settingVC.transitioningDelegate = self
+            settingVC.modalPresentationStyle = .custom
+        }
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

@@ -23,23 +23,10 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        
-        greatServicePctTextField.text = F.NumberFormat.percentile.string(from:
-            NSNumber(value: defaults.double(forKey: C.SettingKeys.GreatServicePercentage.rawValue) * 100))
-        greatServicePctTextField.clearButtonMode = .whileEditing
-        
-        fineServicePctTextField.text = F.NumberFormat.percentile.string(from:
-            NSNumber(value: defaults.double(forKey: C.SettingKeys.FineServicePercentage.rawValue) * 100))
-        fineServicePctTextField.clearButtonMode = .whileEditing
-        
-        poorServicePctTextField.text = F.NumberFormat.percentile.string(from:
-            NSNumber(value: defaults.double(forKey: C.SettingKeys.PoorServicePercentage.rawValue) * 100))
-        poorServicePctTextField.clearButtonMode = .whileEditing
-        
-        defaultTipPctTextField.text = F.NumberFormat.percentile.string(from:
-            NSNumber(value: defaults.double(forKey: C.SettingKeys.DefaultTipPercentage.rawValue) * 100))
-        defaultTipPctTextField.clearButtonMode = .whileEditing
+        configure(textField: greatServicePctTextField, key: C.SettingKeys.GreatServicePercentage.rawValue)
+        configure(textField: fineServicePctTextField, key: C.SettingKeys.FineServicePercentage.rawValue)
+        configure(textField: poorServicePctTextField, key: C.SettingKeys.PoorServicePercentage.rawValue)
+        configure(textField: defaultTipPctTextField, key: C.SettingKeys.DefaultTipPercentage.rawValue)
     }
     
     // MARK: - IBActions
@@ -81,5 +68,20 @@ class SettingVC: UIViewController {
         
         defaults.synchronize()
         dismiss(animated: true, completion: nil)
+    }
+    
+    // Helper Methods
+    
+    private func configure(textField: UITextField, key: String) {
+        let defaults = UserDefaults.standard
+        let number = defaults.double(forKey: key)
+        
+        if number == 0 {
+            textField.placeholder = F.NumberFormat.percentile.string(from: 0)
+        } else {
+            textField.text = F.NumberFormat.percentile.string(from: NSNumber(value: number * 100))
+        }
+        
+        textField.clearButtonMode = .whileEditing
     }
 }
